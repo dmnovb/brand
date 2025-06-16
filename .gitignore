@@ -1,0 +1,71 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Logs
+logs/
+*.log
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Runtime data
+*.pid
+*.seed
+
+# Dependency directories
+bower_components/
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# dotenv environment variables file
+.env
+.env.local
+.env.*.local
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editor folders and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Build outputs
+dist/
+build/
+out/
+
+# Coverage reports
+coverage/
+
+# TypeScript
+*.tsbuildinfo
+
+# Optional VSCode settings
+.history/
+
+# Others
+*.bak
+*.tmp
+*.temp
+*.swp

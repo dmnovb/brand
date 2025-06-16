@@ -1,18 +1,18 @@
-import { useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
-import Projects from './components/Projects';
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import Projects from "./components/Projects";
 
 const App = () => {
-  const [view, setView] = useState<'about' | 'projects'>('about');
+  const [view, setView] = useState<"about" | "projects">("about");
 
   const handleBackToAbout = () => {
-    setView('about');
+    setView("about");
   };
 
   return (
     <div>
       <AnimatePresence mode="wait">
-        {view === 'about' && (
+        {view === "about" && (
           <motion.div
             key="about"
             className="profile-container"
@@ -24,13 +24,22 @@ const App = () => {
             <div className="profile-name">boyan d.</div>
             <div className="profile-position">software engineer</div>
             <nav className="profile-nav">
-              <a href="#about" className="profile-nav-link">About</a>
-              <a href="#connect" className="profile-nav-link">Connect</a>
-              <button className="profile-nav-link" onClick={() => setView('projects')}>Projects</button>
+              <a href="#about" className="profile-nav-link">
+                About
+              </a>
+              <a href="#connect" className="profile-nav-link">
+                Connect
+              </a>
+              <button
+                className="profile-nav-link"
+                onClick={() => setView("projects")}
+              >
+                Projects
+              </button>
             </nav>
           </motion.div>
         )}
-        {view === 'projects' && (
+        {view === "projects" && (
           <motion.div
             key="projects"
             initial={{ opacity: 0, y: 40 }}
@@ -44,6 +53,6 @@ const App = () => {
       </AnimatePresence>
     </div>
   );
-}
+};
 
 export default App;
