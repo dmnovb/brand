@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Projects } from "./components";
+import Projects from "./components/Projects";
 
 const App = () => {
   const [view, setView] = useState<"about" | "projects">("about");
