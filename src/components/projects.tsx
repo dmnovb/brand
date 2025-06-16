@@ -1,30 +1,41 @@
-import { useState, useRef } from "react";
+import T3Radio from './project1/T3Radio';
 
-const projects = Array.from({ length: 5 }, (_, i) => `Project ${i + 1}`);
+interface ProjectViewProps {
+  projectIndex?: number;
+  onBack?: () => void;
+}
 
-const Projects = () => {
-    const [hoverStyle, setHoverStyle] = useState({ left: 0, width: 0, opacity: 0 });
-    const containerRef = useRef(null);
+export const ProjectView = ({
+  projectIndex = 0,
+  // onBack,
+}: ProjectViewProps) => (
+  <div className="project-t3-container">
+    <div className="project-t3-card">
+      <div className="project-index-indicator">{String(projectIndex + 1).padStart(2, '0')}.</div>
 
-    const handleMouseEnter = (e: any) => {
-        const { offsetLeft, offsetWidth } = e.target;
-        setHoverStyle({ left: offsetLeft, width: offsetWidth, opacity: 1 });
-    };
+      {/* {onBack && (
+        <button className="back-button" onClick={onBack}>
+          ← Back
+        </button>
+      )} */}
+      {projectIndex === 0 && (
+        <div style={{ marginBottom: '1.5rem' }}>
+          <T3Radio />
+        </div>
+      )}
+      <div className="project-quote-indicator">
+        <span className="project-quote-symbol">“</span>
+        <span>
+          Good design is <span className="project-quote-highlight">innovative</span>.
+        </span>
+        <span className="project-quote-symbol">”</span>
+      </div>
+    </div>
+  </div>
+);
 
-    const handleMouseLeave = () => {
-        setHoverStyle((prev) => ({ ...prev, opacity: 0 }));
-    };
-
-    return (
-        <ul className="projects-container" ref={containerRef} onMouseLeave={handleMouseLeave}>
-            <div className="hover-bg" style={hoverStyle} />
-            {projects.map((project, index) => (
-                <li key={index} className="project-tab" onMouseEnter={handleMouseEnter}>
-                    {project}
-                </li>
-            ))}
-        </ul>
-    );
+const Projects = ({ projectIndex = 0, onBack }: { projectIndex?: number; onBack?: () => void }) => {
+  return <ProjectView projectIndex={projectIndex} onBack={onBack} />;
 };
 
-export default Projects;
+export default Projects; 

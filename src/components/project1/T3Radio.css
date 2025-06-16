@@ -1,0 +1,252 @@
+.t3radio-body {
+    height: 266.8px;
+    width: 540.4px;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow:
+        0 12px 40px 0 rgba(60, 50, 30, 0.15),
+        0 4px 16px 0 rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 42px 32px 42px 32px;
+    border: 1px solid rgba(200, 200, 200, 0.6);
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(.4, 1.4, .6, 1);
+    margin: 0 auto;
+    max-width: 98vw;
+    max-height: 90vh;
+}
+
+.t3radio-body::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 20px;
+    height: 20px;
+    border-top: 1.5px solid rgba(0, 0, 0, 0.15);
+    border-left: 1.5px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px 0 0 0;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.t3radio-body::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    width: 20px;
+    height: 20px;
+    border-bottom: 1.5px solid rgba(0, 0, 0, 0.15);
+    border-right: 1.5px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0 0 4px 0;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.t3radio-grill {
+    flex: 1 1 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    position: relative;
+}
+
+.t3radio-grill-row {
+    display: flex;
+    gap: 12px;
+    position: relative;
+    z-index: 1;
+}
+
+.t3radio-grill-dot {
+    width: 11px;
+    height: 11px;
+    background:
+        radial-gradient(circle at 10% 10%, #858585 0%, #a8a8a8 70%, #888 100%);
+    border-radius: 50%;
+    box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3),
+        inset 0 -1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.t3radio-dial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 32px;
+    position: relative;
+}
+
+.t3radio-dial::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background: transparent;
+    box-shadow:
+        inset 0 0 0 1px rgba(0, 0, 0, 0.1),
+        0 0 4px 1px rgba(0, 0, 0, 0.07);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.t3radio-dial-circle {
+    width: 256px;
+    height: 256px;
+    border-radius: 50%;
+    margin-bottom: 6px;
+    box-shadow:
+        0 8px 32px 0 rgba(60, 50, 30, 0.2),
+        0 4px 16px 0 rgba(0, 0, 0, 0.1),
+        inset 0 2px 4px 0 rgba(0, 0, 0, 0.1),
+        inset 0 -2px 8px 0 rgba(0, 0, 0, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    cursor: grab;
+    transition: box-shadow 0.2s ease;
+}
+
+.t3radio-dial-circle:active {
+    cursor: grabbing;
+}
+
+.t3radio-dial-indicator {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 24px;
+    background:
+        linear-gradient(to bottom, #666 0%, #333 50%, #000 100%);
+    border-radius: 2px;
+    box-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    z-index: 3;
+}
+
+.t3radio-button:hover {
+    background:
+        radial-gradient(circle at 30% 30%, #f8f8f8 0%, #e0e0e0 70%, #c8c8c8 100%);
+    box-shadow:
+        0 3px 6px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.7),
+        inset 0 -1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.t3radio-depth {
+    transform-style: preserve-3d;
+}
+
+.t3radio-dial-depth {
+    transform-style: preserve-3d;
+}
+
+@media (max-width: 900px) {
+    .t3radio-body {
+        width: 340px;
+        height: 480px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 24px 12px 24px 12px;
+    }
+
+    .t3radio-grill {
+        gap: 6px;
+        margin-bottom: 18px;
+        margin-top: 12px;
+        align-items: center;
+    }
+
+    .t3radio-grill-row {
+        gap: 6px;
+    }
+
+    .t3radio-dial {
+        margin-left: 0;
+        margin-top: 18px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .t3radio-dial-circle {
+        width: 90px;
+        height: 90px;
+    }
+
+    .t3radio-buttons {
+        position: static;
+        margin-top: 18px;
+        display: flex;
+        justify-content: center;
+        gap: 18px;
+        width: 100%;
+        transform: none;
+    }
+}
+
+@media (max-width: 700px) {
+    .t3radio-body {
+        height: 566.8px;
+        width: 340.4px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        position: relative;
+        padding: 42px 32px 42px 32px;
+        transition: all 0.3s cubic-bezier(.4, 1.4, .6, 1);
+    }
+
+    .t3radio-grill {
+        width: 100%;
+        gap: 10px;
+        margin-bottom: 32px;
+    }
+
+    .t3radio-grill-row {
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .t3radio-dial {
+        margin: 0 auto 0 auto;
+        margin-bottom: 24px;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .t3radio-dial-circle {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .t3radio-buttons {
+        margin-top: 0;
+        gap: 18px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}
